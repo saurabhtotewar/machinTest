@@ -1,0 +1,30 @@
+/* Structure */
+table {
+  width: 100%;
+}
+h3{
+  text-align: center;
+}
+input[type="text"] {
+  width: 300px;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

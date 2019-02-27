@@ -1,0 +1,42 @@
+<p>Hello, {{ myValue }} This is application landing page</p>
+
+<button mat-raised-button color="primary" (click)="usersList()"><a routerLink="/users">Users</a></button>
+<button mat-raised-button color="accent" (click)="orders()"><a routerLink="/orders">Orders</a></button>
+
+
+<h3>Users List</h3><br>
+
+
+<form>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+      <input type="text" class="form-control" name="searchString" placeholder="Search by Name/Company name here..." [(ngModel)]="searchString">
+    </div>
+  </div>
+</form>
+<br>
+<table class="table table-bordered" >
+  <thead>
+  <tr>
+    <th class="hidden">Id</th>
+    <th>Name</th>
+    <th>Username</th>
+    <th>City</th>
+    <th>Zipcode</th>
+    <th>Company Name</th>
+    <th>Website</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users | filter : 'name' : searchString; let i = index">
+    <td class="hidden">{{user.id}}</td>
+    <td>{{user.name}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.address.city}}</td>
+    <td>{{user.address.zipcode}}</td>
+    <td>{{user.company.name}}</td>
+    <td>{{user.website}}</td>
+  </tr>
+  </tbody>
+</table>
